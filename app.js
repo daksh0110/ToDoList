@@ -54,7 +54,7 @@ const defaultItems = [item1,item2,item3];
  
 const List = mongoose.model("List", listSchema);
  
-app.all('*', (request,response) => {
+app.all('*', (req,res) => {
 
  
 app.get("/", function(req, res) {
