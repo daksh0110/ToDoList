@@ -1,6 +1,8 @@
 const express = require("express");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
+const dotenv = require('dotenv')
+require('dotenv').config();
 
 const _=require("lodash");
 const app = express();
@@ -146,7 +148,7 @@ app.get("/about", function(req, res){
 });
  
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
 })
