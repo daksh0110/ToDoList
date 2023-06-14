@@ -10,8 +10,8 @@ const app = express();
  
 app.set('view engine', 'ejs');
  
-app.use(express.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.all(express.urlencoded({extended: true}));
+app.all(express.static("public"));
  
 const connectDB = async () => {
   try {
