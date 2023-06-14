@@ -145,7 +145,7 @@ app.get("/:customListName",function(req,res){
   
 })
 app.all('*', (req,res) => {
-  res.json("/css/style.css");
+  res.json(style.css);
 })
 
 app.get("/about", function(req, res){
