@@ -145,7 +145,7 @@ app.get("/:customListName",function(req,res){
   
 })
 app.all('*', (req,res) => {
-  res.json({"every thing":"is awesome"})
+  // res.json({"every thing":"is awesome"})
 })
 
 app.get("/about", function(req, res){
