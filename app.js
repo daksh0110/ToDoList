@@ -1,8 +1,9 @@
 const express = require("express");
+require('dotenv').config();
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const dotenv = require('dotenv')
-require('dotenv').config();
+
 
 const _=require("lodash");
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.static("public"));
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(process.env.MONGO_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
@@ -151,4 +153,4 @@ connectDB().then(() => {
   app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
-})
+});
