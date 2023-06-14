@@ -54,7 +54,8 @@ const defaultItems = [item1,item2,item3];
  
 const List = mongoose.model("List", listSchema);
  
- 
+app.all('*', (request,response) => {
+
  
 app.get("/", function(req, res) {
  
@@ -144,14 +145,15 @@ app.get("/:customListName",function(req,res){
   
   
 })
-app.all('*', (req,res) => {
-  res.json({"every thing":"is awesome"})
-})
+
+
+
+
 
 app.get("/about", function(req, res){
   res.render("about");
 });
- 
+})
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {
       console.log("listening for requests");
