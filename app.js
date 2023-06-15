@@ -57,7 +57,7 @@ const List = mongoose.model("List", listSchema);
  
  
  
-app.all("/", function(req, res) {
+app.get("/", function(req, res) {
  
   Item.find({})
   .then(function(foundItems){
